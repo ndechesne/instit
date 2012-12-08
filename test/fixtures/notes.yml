@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dateNote: 2012-12-08 23:29:43
+  subject: MyString
+  note: 9.99
+
+two:
+  dateNote: 2012-12-08 23:29:43
+  subject: MyString
+  note: 9.99
