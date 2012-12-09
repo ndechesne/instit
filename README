@@ -1,0 +1,24 @@
+
+
+Eleve
+ - nom
+ - prenom
+ - 1-1 :profil
+ - date de naissance
+ - 1-* :notes
+
+Note
+ - *-1 :controle
+ - note
+ - misc
+
+Controle
+ - date
+ - noteMax
+ - *-1 Matiere
+ - descriptions
+
+Matiere
+ - nom
+ - description
+

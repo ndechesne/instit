@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2012-12-09 00:06:25
+  matiere_id: 1
+  notemax: 9.99
+  description: MyText
+
+two:
+  date: 2012-12-09 00:06:25
+  matiere_id: 1
+  notemax: 9.99
+  description: MyText
