@@ -1,4 +1,10 @@
 Instit::Application.routes.draw do
+  resources :controles
+
+
+  resources :matieres
+
+
   resources :students
 
 

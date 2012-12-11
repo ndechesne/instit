@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @controle.date %>
+</p>
+
+<p>
+  <b>Matiere:</b>
+  <%= @controle.matiere_id %>
+</p>
+
+<p>
+  <b>Notemax:</b>
+  <%= @controle.notemax %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @controle.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_controle_path(@controle) %> |
+<%= link_to 'Back', controles_path %>
