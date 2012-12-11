@@ -1,5 +1,5 @@
 class Note < ActiveRecord::Base
-  attr_accessible :dateNote, :note, :subject
+  attr_accessible :dateNote, :note, :subject, :eleve_id, :controle_id, :misc
 
   validates :note, :presence => true
   #TODO: validate note <= noteMax
