@@ -1,4 +1,4 @@
-class Eleve < ActiveRecord::Base
+class Student < ActiveRecord::Base
   attr_accessible :addr, :birth, :firstName, :lastName
 
   validates :firstName, :presence => true

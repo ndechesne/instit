@@ -1,5 +1,5 @@
 Instit::Application.routes.draw do
-  resources :eleves
+  resources :students
 
 
   resources :notes

@@ -22,16 +22,6 @@ ActiveRecord::Schema.define(:version => 20121208231111) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "eleves", :force => true do |t|
-    t.string   "lastName"
-    t.string   "firstName"
-    t.datetime "birth"
-    t.text     "addr"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "gender"
-  end
-
   create_table "matieres", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -43,9 +33,19 @@ ActiveRecord::Schema.define(:version => 20121208231111) do
     t.decimal  "note"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "eleve_id"
+    t.integer  "student_id"
     t.text     "misc"
     t.integer  "controle_id"
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "lastName"
+    t.string   "firstName"
+    t.datetime "birth"
+    t.text     "addr"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "gender"
   end
 
 end
