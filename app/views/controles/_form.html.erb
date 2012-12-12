@@ -12,12 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :matiere_id %><br />
-    <%= f.number_field :matiere_id %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :notemax %><br />
@@ -26,6 +22,14 @@
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :matiere_id %><br />
+    <%= f.select :matiere_id, Matiere.find(:all , :order => "name").collect {|s| [(s.name), s.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
   </div>
   <div class="actions">
     <%= f.submit %>

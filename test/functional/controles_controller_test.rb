@@ -18,7 +18,7 @@ class ControlesControllerTest < ActionController::TestCase
 
   test "should create controle" do
     assert_difference('Controle.count') do
-      post :create, controle: { date: @controle.date, description: @controle.description, matiere_id: @controle.matiere_id, notemax: @controle.notemax }
+      post :create, controle: { date: @controle.date, description: @controle.description, matiere_id: @controle.matiere_id, name: @controle.name, notemax: @controle.notemax }
     end
 
     assert_redirected_to controle_path(assigns(:controle))
@@ -35,7 +35,7 @@ class ControlesControllerTest < ActionController::TestCase
   end
 
   test "should update controle" do
-    put :update, id: @controle, controle: { date: @controle.date, description: @controle.description, matiere_id: @controle.matiere_id, notemax: @controle.notemax }
+    put :update, id: @controle, controle: { date: @controle.date, description: @controle.description, matiere_id: @controle.matiere_id, name: @controle.name, notemax: @controle.notemax }
     assert_redirected_to controle_path(assigns(:controle))
   end
 

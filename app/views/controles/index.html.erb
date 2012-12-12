@@ -2,10 +2,11 @@
 
 <table>
   <tr>
-    <th>Date</th>
-    <th>Matiere</th>
+    <th>Name</th>
     <th>Notemax</th>
     <th>Description</th>
+    <th>Matiere</th>
+    <th>Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +14,11 @@
 
 <% @controles.each do |controle| %>
   <tr>
-    <td><%= controle.date %></td>
-    <td><%= controle.matiere_id %></td>
+    <td><%= controle.name %></td>
     <td><%= controle.notemax %></td>
     <td><%= controle.description %></td>
+    <td><%= controle.matiere_id %></td>
+    <td><%= controle.date %></td>
     <td><%= link_to 'Show', controle %></td>
     <td><%= link_to 'Edit', edit_controle_path(controle) %></td>
     <td><%= link_to 'Destroy', controle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
