@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Matiere.create [{:name => 'Francais'},
+                {:name => 'Maths'},
+                {:name => 'Anglais'},
+                {:name => 'Histoire'},
+                {:name => 'Geographie'}]
+
+Student.create [{:firstName => 'Nicolas', :lastName => 'Dechesne', :gender => 'M'},
+                {:firstName => 'Marion',  :lastName => 'Sanchez',  :gender => 'F'},
+                {:firstName => 'Zinedine', :lastName => 'Zidane',  :gender => 'M'}]
+                
