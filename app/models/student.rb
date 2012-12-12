@@ -6,4 +6,9 @@ class Student < ActiveRecord::Base
   validates :gender, :presence => true
 
   has_many :notes
+
+  def full_name
+     "#{firstName} #{lastName}"
+  end
+
 end
