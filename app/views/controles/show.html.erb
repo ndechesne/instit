@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <b>Notemax:</b>
+  <b>Note max:</b>
   <%= @controle.notemax %>
 </p>
 
@@ -17,7 +17,7 @@
 
 <p>
   <b>Matiere:</b>
-  <%= @controle.matiere_id %>
+  <%= Matiere.find_by_id(@controle.matiere_id).name %>
 </p>
 
 <p>
@@ -25,6 +25,35 @@
   <%= @controle.date %>
 </p>
 
+<p>
+  <b>Notes:</b>
+  <table>
+    <tr>
+      <th>Nom</th>
+      <th>Note</th>
+      <th>Description</th>
+      <th>Lien</th>
+    </tr>
+    
+    <% @controle.notes.each do |note| %>
+    <tr>
+      <td><%= Student.find_by_id(note.student_id).full_name %></td>
+      <td><%= note.note %></td>
+      <td><%= note.misc %></td>
+      <td><%= link_to 'Note', note_path(note.id) %></td>
+    </tr>
+    <% end %>
+  </table>  
+</p>
+
+<p>
+  <b>Moyenne:</b>
+  <%= @controle.average %>
+</p>
+
+<p>
+<%= link_to 'New Note', new_note_path(:controle => @controle.id) %>
+</p>
 
 <%= link_to 'Edit', edit_controle_path(@controle) %> |
 <%= link_to 'Back', controles_path %>

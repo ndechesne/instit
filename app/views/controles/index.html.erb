@@ -4,6 +4,8 @@
   <tr>
     <th>Name</th>
     <th>Notemax</th>
+    <th>Moyenne</th>    
+    <th>Nb notes</th>    
     <th>Description</th>
     <th>Matiere</th>
     <th>Date</th>
@@ -16,8 +18,10 @@
   <tr>
     <td><%= controle.name %></td>
     <td><%= controle.notemax %></td>
+    <td><%= controle.average %></td>
+    <td><%= controle.nb_notes %></td>
     <td><%= controle.description %></td>
-    <td><%= controle.matiere_id %></td>
+    <td><%= Matiere.find_by_id(controle.matiere_id).name %></td>
     <td><%= controle.date %></td>
     <td><%= link_to 'Show', controle %></td>
     <td><%= link_to 'Edit', edit_controle_path(controle) %></td>

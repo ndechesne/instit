@@ -11,4 +11,9 @@ class Student < ActiveRecord::Base
      "#{firstName} #{lastName}"
   end
 
+  # available genders
+  def self.genders
+     ['M', 'F']
+  end
+
 end

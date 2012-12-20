@@ -12,14 +12,20 @@
 
 <p>
   <b>Student:</b>
-  <%= @note.student_id %>
+  <%= @note.student.full_name %>
+</p>
+
+<p>
+  <b>Matiere:</b>
+  <%= @note.matiere.name %>
 </p>
 
 <p>
   <b>Controle:</b>
-  <%= @note.controle_id %>
+  <%= @note.controle.name %>
 </p>
 
 
+<%= link_to 'Controle', controle_path(@note.controle_id) %> |
 <%= link_to 'Edit', edit_note_path(@note) %> |
 <%= link_to 'Back', notes_path %>

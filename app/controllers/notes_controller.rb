@@ -25,6 +25,7 @@ class NotesController < ApplicationController
   # GET /notes/new.json
   def new
     @note = Note.new
+    @note.controle_id = params[:controle]
 
     respond_to do |format|
       format.html # new.html.erb
