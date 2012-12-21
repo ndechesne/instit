@@ -16,7 +16,27 @@
     <td><%= link_to 'Show', matiere %></td>
     <td><%= link_to 'Edit', edit_matiere_path(matiere) %></td>
     <td><%= link_to 'Destroy', matiere, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  </tr>      
+
+  <% if matiere.controles.size > 0 %>
+  <tr><td></td><td>
+    <table>
+      <tr>
+        <th>Controle</th>
+        <th>Moyenne</th>
+      </tr>
+
+      <% matiere.controles.each do |controle| %>
+      <tr>
+        <td><%= controle.name %></td>
+        <td><%= controle.average %></td>
+      </tr>
+      <% end %>
+    </table>
+    </td></tr>
+    <% end %>      
+
+
 <% end %>
 </table>
 

@@ -23,10 +23,16 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+
+  <% unless params[:matiere] %>
   <div class="field">
     <%= f.label :matiere_id %><br />
     <%= f.select :matiere_id, Matiere.find(:all , :order => "name").collect {|s| [(s.name), s.id]} %>
   </div>
+  <% else %>
+  <%= f.hidden_field :matiere_id, :value => params[:matiere] %>
+  <% end %>
+
   <div class="field">
     <%= f.label :date %><br />
     <%= f.datetime_select :date %>

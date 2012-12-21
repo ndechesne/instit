@@ -1,12 +1,17 @@
 class Note < ActiveRecord::Base
   attr_accessible :dateNote, :note, :subject, :student_id, :controle_id, :misc
 
-  validates :note, :presence => true
+  validates :note, :presence => true, :numericality => true
   validates :controle_id, :presence => true
-  #TODO: validate note <= noteMax
+
+  validate :validate_note
 
   belongs_to :student
   belongs_to :controle
+
+  def validate_note
+    errors.add('Note invalide!') if self.note > controle.notemax
+  end 
 
   def controle
     Controle.find_by_id(controle_id)

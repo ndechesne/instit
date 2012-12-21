@@ -10,6 +10,9 @@
   <%= @matiere.description %>
 </p>
 
+<p>
+<%= link_to 'New controle', new_controle_path(:matiere => @matiere.id) %>
+</p>
 
 <%= link_to 'Edit', edit_matiere_path(@matiere) %> |
 <%= link_to 'Back', matieres_path %>

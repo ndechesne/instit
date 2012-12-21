@@ -3,4 +3,6 @@ class Matiere < ActiveRecord::Base
 
   has_many :controles, :dependent => :destroy
 
+  validates :name, :uniqueness => true
+
 end
