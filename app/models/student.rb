@@ -5,7 +5,7 @@ class Student < ActiveRecord::Base
   validates :lastName, :presence => true
   validates :gender, :presence => true
 
-  has_many :notes
+  has_many :notes, :dependent => :destroy
 
   def full_name
      "#{firstName} #{lastName}"
