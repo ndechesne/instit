@@ -1,31 +1,41 @@
-<h1>Listing students</h1>
 
-<table>
+<div class="page-header"
+<h1>Liste des Eleves</h1>
+</div>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
   <tr>
     <th>Lastname</th>
     <th>Firstname</th>
     <th>Birth</th>
-    <th>Addr</th>
     <th>Gender</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
+  </thead>
 
+  <tbody>
 <% @students.each do |student| %>
   <tr>
     <td><%= student.lastName %></td>
     <td><%= student.firstName %></td>
     <td><%= student.birth %></td>
-    <td><%= student.addr %></td>
     <td><%= student.gender %></td>
-    <td><%= link_to 'Show', student %></td>
-    <td><%= link_to 'Edit', edit_student_path(student) %></td>
-    <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+      <div class="btn-group">
+        <button class="btn"><%= link_to 'Show', student %></button>
+        <button class="btn"><%= link_to 'Edit', edit_student_path(student) %></button>
+        <button class="btn"><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+      </div>
+    </td>
+
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
 <%= link_to 'New Student', new_student_path %>
+
+

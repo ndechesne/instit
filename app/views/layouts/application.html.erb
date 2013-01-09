@@ -8,9 +8,20 @@
 </head>
 <body>
 
-<%= render_navigation(:expand_all => true) %>
+<%= nav_bar :fixed => :top, :brand => "iNote" do %>
+    <% menu_group  do %>
+        <%= menu_item "Eleves", students_path %>
+        <%= menu_item "Controles", controles_path %>
+        <%= menu_item "Matieres", matieres_path %>
+        <%= menu_item "Notes", notes_path %>
+    <% end %>
+<% end %>
+
 
 <%= yield %>
+
+
+
 
 </body>
 </html>

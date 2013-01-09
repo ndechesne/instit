@@ -1,29 +1,34 @@
-<h1>Listing notes</h1>
 
-<table>
+<!-- <div class="hero-unit"> -->
+<!--   <h2>Notes</h2> -->
+<!--   <p>Liste de toutes les notes</p> -->
+<!-- </div> -->
+
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
   <tr>
     <th>Note</th>
-    <th>Misc</th>
     <th>Student</th>
     <th>Matiere</th>
-    <th>Controle</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
+  </thead>
 
+
+  <tbody>
 <% @notes.each do |note| %>
-  <tr>
+    <tr>
     <td><%= note.note %></td>
-    <td><%= note.misc %></td>
     <td><%= note.student.full_name %></td>
     <td><%= note.matiere.name %></td>
-    <td><%= note.controle.name %></td>
     <td><%= link_to 'Show', note %></td>
-    <td><%= link_to 'Edit', edit_note_path(note) %></td>
     <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+
 <% end %>
+  </tbody>
 </table>
 
 <br />

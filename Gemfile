@@ -38,4 +38,8 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "simple-navigation"
+gem 'simple-navigation-bootstrap'
 
+gem 'bootstrap-sass'
+
+gem 'rails_bootstrap_navbar'

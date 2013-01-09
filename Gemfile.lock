@@ -29,6 +29,8 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bootstrap-sass (2.2.2.0)
+      sass (~> 3.2)
     builder (3.0.4)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -69,6 +71,8 @@ GEM
       activesupport (= 3.2.9)
       bundler (~> 1.0)
       railties (= 3.2.9)
+    rails_bootstrap_navbar (0.1.5.beta)
+      rails (>= 3.0.0)
     railties (3.2.9)
       actionpack (= 3.2.9)
       activesupport (= 3.2.9)
@@ -86,6 +90,8 @@ GEM
       tilt (~> 1.3)
     simple-navigation (3.9.0)
       activesupport (>= 2.3.2)
+    simple-navigation-bootstrap (0.0.4)
+      simple-navigation (>= 3.7.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -106,10 +112,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
   jquery-rails
   rails (= 3.2.9)
+  rails_bootstrap_navbar
   sass-rails (~> 3.2.3)
   simple-navigation
+  simple-navigation-bootstrap
   sqlite3
   uglifier (>= 1.0.3)

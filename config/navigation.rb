@@ -4,7 +4,7 @@ SimpleNavigation::Configuration.run do |navigation|
   # Specify a custom renderer if needed.
   # The default renderer is SimpleNavigation::Renderer::List which renders HTML lists.
   # The renderer can also be specified as option in the render_navigation call.
-  # navigation.renderer = Your::Custom::Renderer
+  navigation.renderer = SimpleNavigation::Renderer::Bootstrap
 
   # Specify the class that will be applied to active navigation items. Defaults to 'selected'
   # navigation.selected_class = 'your_selected_class'
@@ -49,6 +49,8 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
+    primary.dom_class = "nav nav-tabs"
+
     primary.item :students, 'Eleves', students_path
     primary.item :controles, 'Controles', controles_path
     primary.item :matieres, 'Matieres', matieres_path

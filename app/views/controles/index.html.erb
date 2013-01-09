@@ -1,26 +1,23 @@
-<h1>Listing controles</h1>
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Moyenne</th>    
+      <th>Nb notes</th>    
+      <th>Matiere</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Notemax</th>
-    <th>Moyenne</th>    
-    <th>Nb notes</th>    
-    <th>Description</th>
-    <th>Matiere</th>
-    <th>Date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+  <tbody>
 <% @controles.each do |controle| %>
   <tr>
     <td><%= controle.name %></td>
-    <td><%= controle.notemax %></td>
     <td><%= controle.average %></td>
     <td><%= controle.nb_notes %></td>
-    <td><%= controle.description %></td>
     <td><%= Matiere.find_by_id(controle.matiere_id).name %></td>
     <td><%= controle.date %></td>
     <td><%= link_to 'Show', controle %></td>
@@ -28,6 +25,7 @@
     <td><%= link_to 'Destroy', controle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
