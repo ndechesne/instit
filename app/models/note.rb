@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: notes
+#
+#  id          :integer          not null, primary key
+#  note        :decimal(, )
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  student_id  :integer
+#  misc        :text
+#  controle_id :integer
+#
+
 class Note < ActiveRecord::Base
   attr_accessible :dateNote, :note, :subject, :student_id, :controle_id, :misc
 

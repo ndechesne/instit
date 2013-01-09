@@ -43,3 +43,7 @@ gem 'simple-navigation-bootstrap'
 gem 'bootstrap-sass'
 
 gem 'rails_bootstrap_navbar'
+
+group :development do
+  gem 'annotate'
+end
