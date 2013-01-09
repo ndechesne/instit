@@ -47,3 +47,5 @@ gem 'rails_bootstrap_navbar'
 group :development do
   gem 'annotate'
 end
+
+gem 'bcrypt-ruby'
