@@ -11,6 +11,7 @@
     <th>Note</th>
     <th>Student</th>
     <th>Matiere</th>
+    <th>Controle</th>
     <th></th>
     <th></th>
   </tr>
@@ -23,6 +24,7 @@
     <td><%= note.note %></td>
     <td><%= note.student.full_name %></td>
     <td><%= note.matiere.name %></td>
+    <td><%= note.controle.name %></td>
     <td><%= link_to 'Show', note %></td>
     <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

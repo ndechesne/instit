@@ -24,14 +24,23 @@
     <%= f.select :student_id, Student.find(:all , :order => "firstName, lastName").collect {|s| [(s.firstName + " " + s.lastName), s.id]} %>
   </div>
 
-  <% unless params[:controle] %>
   <div class="field">
     <%= f.label :controle_id %><br />
+    <% unless params[:controle] %>
     <%= f.select :controle_id, Controle.find(:all , :order => "name").collect {|s| [(s.matiere.name + " : " + s.name ), s.id]} %>   
+    <% else %>
+    <%= f.select :controle_id, [ [(Controle.find_by_id(params[:controle]).matiere.name), 1]] %>   
+    <% end %>
   </div>
-  <% else %>
-  <%= f.hidden_field :controle_id, :value => params[:controle] %>
-  <% end %>
+
+  <!-- <% unless params[:controle] %> -->
+  <!-- <div class="field"> -->
+  <!--   <%= f.label :controle_id %><br /> -->
+  <!--   <%= f.select :controle_id, Controle.find(:all , :order => "name").collect {|s| [(s.matiere.name + " : " + s.name ), s.id]} %>    -->
+  <!-- </div> -->
+  <!-- <% else %> -->
+  <!-- <%= f.hidden_field :controle_id, :value => params[:controle] %> -->
+  <!-- <% end %> -->
 
 
   <div class="actions">
