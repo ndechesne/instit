@@ -1,13 +1,14 @@
 Instit::Application.routes.draw do
 
-  resources :controles
+  get "static_pages/home"
+  get "static_pages/help"
+  get "static_pages/about"
 
+  resources :controles
 
   resources :matieres
 
-
   resources :students
-
 
   resources :notes
 
