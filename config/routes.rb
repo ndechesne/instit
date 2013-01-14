@@ -1,4 +1,5 @@
 Instit::Application.routes.draw do
+
   resources :controles
 
 
@@ -9,6 +10,11 @@ Instit::Application.routes.draw do
 
 
   resources :notes
+
+  resources :users
+
+  match '/signup',  to: 'users#new'
+
 
 
   # The priority is based upon order of creation:
