@@ -16,8 +16,11 @@ Instit::Application.routes.draw do
 
   resources :users
 
-  match '/signup',  to: 'users#new'
+  resources :sessions, only: [:new, :create, :destroy]
 
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
 
   # The priority is based upon order of creation:
@@ -71,7 +74,8 @@ Instit::Application.routes.draw do
   # just remember to delete public/index.html.
 #  root :to => 'welcome#index'
 #  root :to => 'notes#index'
-  root :to => 'static_pages#home'
+#  root :to => 'static_pages#home'
+  root :to => 'sessions#new'
 
   # See how all your routes lay out with "rake routes"
 
