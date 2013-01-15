@@ -5,8 +5,9 @@ Instit::Application.routes.draw do
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
+  match '/dashboard',   to: 'static_pages#dashboard'
 
-  get "static_pages/home"
+#  get "static_pages/home"
 
 
   resources :controles
@@ -77,8 +78,8 @@ Instit::Application.routes.draw do
   # just remember to delete public/index.html.
 #  root :to => 'welcome#index'
 #  root :to => 'notes#index'
-#  root :to => 'static_pages#home'
-  root :to => 'sessions#new'
+  root :to => 'static_pages#home'
+#  root :to => 'sessions#new'
 
   # See how all your routes lay out with "rake routes"
 

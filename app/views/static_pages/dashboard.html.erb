@@ -1,0 +1,33 @@
+<div class="page-header">
+     <h1>Dashboard de <%= current_user.name %></h1>
+</div>
+
+
+<h2>Mes classes</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>State</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @classrooms.each do |classroom| %>
+  <tr>
+    <td><%= classroom.name %></td>
+    <td><%= classroom.state %></td>
+    <td><%= link_to 'Show', classroom %></td>
+    <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
+    <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+
+
+
+

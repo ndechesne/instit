@@ -10,15 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-
+  
+<fieldset>
+  <legend><%= legend %></legend>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.select :state, Classroom.states  %>
+  </div>
   <div class="actions">
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :state, :value => 'active' %>
     <%= f.submit %>
   </div>
+</fieldset>
+
 <% end %>
