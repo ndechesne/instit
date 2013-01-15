@@ -23,6 +23,12 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  has_many :classrooms, :dependent => :destroy
+
+  def active_classrooms
+    Classroom.where(:user_id => id).where(:state => 'active').all
+  end
+  
   private
 
     def create_remember_token

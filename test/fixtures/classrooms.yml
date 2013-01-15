@@ -1,20 +1,9 @@
-# == Schema Information
-#
-# Table name: classrooms
-#
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  prof       :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  user_id: 1
   name: MyString
-  prof: MyString
 
 two:
+  user_id: 1
   name: MyString
-  prof: MyString
