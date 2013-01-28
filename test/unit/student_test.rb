@@ -10,6 +10,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  gender     :string(255)
+#  user_id    :integer
 #
 
 require 'test_helper'

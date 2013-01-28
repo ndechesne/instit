@@ -18,7 +18,7 @@
     <td><%= controle.name %></td>
     <td><%= controle.average %></td>
     <td><%= controle.nb_notes %></td>
-    <td><%= Matiere.find_by_id(controle.matiere_id).name %></td>
+    <td><%= controle.matiere %></td>
     <td><%= controle.date %></td>
     <td><%= link_to 'Show', controle %></td>
     <td><%= link_to 'Edit', edit_controle_path(controle) %></td>

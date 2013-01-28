@@ -1,0 +1,40 @@
+digraph G {
+   fontname = "Bitstream Vera Sans"
+   fontsize = 8
+
+   node [
+           fontname = "Verdana"
+           fontsize = 8
+           shape = "record"
+   ]
+
+   edge [
+           fontname = "Verdana"
+           fontsize = 8
+           arrowhead = "none"
+           dir = "both"
+           arrowtail = "none"
+           taillabel = "1"
+           headlabel = "*"
+   ]
+
+   subgraph  { 
+   rank=same
+   Matiere
+   Classroom
+   Student 
+   }   
+
+   User -> Student 
+   User -> Classroom 
+   User -> Matiere 
+
+   Student -> Classroom [taillabel="*"]
+   Student -> Note
+
+   Classroom -> Matiere
+   Classroom -> Controle 
+
+   Controle -> Note 
+   Matiere -> Controle
+}

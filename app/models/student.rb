@@ -10,6 +10,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  gender     :string(255)
+#  user_id    :integer
 #
 
 class Student < ActiveRecord::Base
@@ -20,6 +21,8 @@ class Student < ActiveRecord::Base
   validates :gender, :presence => true
 
   has_many :notes, :dependent => :destroy
+  has_and_belongs_to_many :classrooms
+  belongs_to :user
 
   def full_name
      "#{firstName} #{lastName}"

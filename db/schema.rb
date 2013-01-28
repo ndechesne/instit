@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115000525) do
+ActiveRecord::Schema.define(:version => 20130128152217) do
 
   create_table "classrooms", :force => true do |t|
     t.string   "name"
@@ -21,21 +21,29 @@ ActiveRecord::Schema.define(:version => 20130115000525) do
     t.string   "state"
   end
 
+  create_table "classrooms_students", :id => false, :force => true do |t|
+    t.integer "classroom_id"
+    t.integer "student_id"
+  end
+
   create_table "controles", :force => true do |t|
     t.datetime "date"
     t.integer  "matiere_id"
     t.decimal  "notemax"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "name"
+    t.integer  "classroom_id"
   end
 
   create_table "matieres", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "classroom_id"
+    t.integer  "user_id"
   end
 
   create_table "notes", :force => true do |t|
@@ -43,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20130115000525) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "student_id"
-    t.text     "misc"
+    t.text     "comment"
     t.integer  "controle_id"
   end
 
@@ -55,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20130115000525) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "gender"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

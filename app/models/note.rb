@@ -7,7 +7,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  student_id  :integer
-#  misc        :text
+#  comment     :text
 #  controle_id :integer
 #
 
@@ -16,6 +16,7 @@ class Note < ActiveRecord::Base
 
   validates :note, :presence => true, :numericality => true
   validates :controle_id, :presence => true
+  validates :student_id, :presence => true
 
   validate :validate_note
 
