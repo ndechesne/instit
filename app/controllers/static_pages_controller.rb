@@ -15,6 +15,7 @@ class StaticPagesController < ApplicationController
 
     if signed_in?
       @classrooms = Classroom.where(:user_id => current_user).all
+      @students = Student.where(:user_id => current_user).all
     else
       redirect_to signin_path
     end

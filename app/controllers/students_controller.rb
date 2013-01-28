@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.where(:user_id => current_user).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    @student = Student.find(params[:id])
+    @student = Student.where(:user_id => current_user).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
   # GET /students/new.json
   def new
     @student = Student.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @student }
@@ -34,13 +34,20 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
-    @student = Student.find(params[:id])
+    @student = Student.where(:user_id => current_user).find(params[:id])
   end
 
   # POST /students
   # POST /students.json
   def create
-    @student = Student.new(params[:student])
+    @student = current_user.students.new(params[:student])
+
+    if params[:classroom_id]
+      @classroom = Classroom.where(:user_id => current_user).find_by_id(params[:classroom_id])
+      if @classroom
+        @student.classrooms.push(@classroom)
+      end
+    end
 
     respond_to do |format|
       if @student.save
@@ -56,7 +63,7 @@ class StudentsController < ApplicationController
   # PUT /students/1
   # PUT /students/1.json
   def update
-    @student = Student.find(params[:id])
+    @student = Student.where(:user_id => current_user).find(params[:id])
 
     respond_to do |format|
       if @student.update_attributes(params[:student])
@@ -72,7 +79,7 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   # DELETE /students/1.json
   def destroy
-    @student = Student.find(params[:id])
+    @student = Student.where(:user_id => current_user).find(params[:id])
     @student.destroy
 
     respond_to do |format|

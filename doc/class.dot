@@ -32,7 +32,7 @@ digraph G {
    Student -> Classroom [taillabel="*"]
    Student -> Note
 
-   Classroom -> Matiere
+   Classroom -> Matiere  [taillabel="*"]
    Classroom -> Controle 
 
    Controle -> Note 

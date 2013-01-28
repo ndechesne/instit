@@ -1,14 +1,80 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>User:</b>
-  <%= @classroom.user_id %>
-</p>
+<div class="page-header">
+     <h1>Classe <%= @classroom.name %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @classroom.name %>
-</p>
+<div class="page-header">
+     <h2>Les Eleves</h2>
+</div>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Birth</th>
+    <th>Gender</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+<% @classroom.students.each do |student| %>
+  <tr>
+    <td><%= student.lastName %></td>
+    <td><%= student.firstName %></td>
+    <td><%= student.birth %></td>
+    <td><%= student.gender %></td>
+    <td>
+      <div class="btn-group">
+        <%= link_to 'Show', student, :class => "btn btn-info btn-mini" %></button>
+        <%= link_to 'Edit', edit_student_path(student), :class => "btn  btn-info btn-mini" %></button>
+        <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-mini" %></button>
+</div>
+    </td>
+
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<%= link_to 'Nouvel Eleve', new_student_path(:classroom => @classroom) %> 
+
+<div class="page-header">
+     <h2>Les Controles</h2>
+</div>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Date</th>
+    <th>Matiere</th>
+    <th>Note Max</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+<% @classroom.controles.each do |controle| %>
+  <tr>
+    <td><%= controle.name %></td>
+    <td><%= controle.date %></td>
+    <td><%= controle.matiere %></td>
+    <td><%= controle.notemax %></td>
+    <td>
+      <div class="btn-group">
+        <%= link_to 'Show', controle, :class => "btn btn-info btn-mini" %></button>
+        <%= link_to 'Edit', edit_controle_path(controle), :class => "btn  btn-info btn-mini" %></button>
+        <%= link_to 'Destroy', controle, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-mini" %></button>
+</div>
+    </td>
+
+  </tr>
+<% end %>
+</tbody>
+</table>
 
 
 <%= link_to 'Edit', edit_classroom_path(@classroom) %> |

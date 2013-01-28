@@ -14,7 +14,7 @@
 #
 
 class Student < ActiveRecord::Base
-  attr_accessible :addr, :birth, :firstName, :lastName, :gender
+  attr_accessible :addr, :birth, :firstName, :lastName, :gender, :user_id
 
   validates :firstName, :presence => true
   validates :lastName, :presence => true

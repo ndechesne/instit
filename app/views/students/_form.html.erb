@@ -23,15 +23,18 @@
     <%= f.label :birth %><br />
     <%= f.date_select :birth, :start_year => Time.now.year - 30, :end_year => Time.now.year  %>
   </div>
-  <div class="field">
-    <%= f.label :addr %><br />
-    <%= f.text_area :addr %>
-  </div>
+  <!-- <div class="field"> -->
+  <!--   <%= f.label :addr %><br /> -->
+  <!--   <%= f.text_area :addr %> -->
+  <!-- </div> -->
   <div class="field">
     <%= f.label :gender %><br />
     <%= f.select :gender, Student.genders  %>
   </div>
   <div class="actions">
+    <% if params[:classroom] %>
+    <input name="classroom_id" type="hidden" value="<%= params[:classroom] %>" />
+    <% end %>
     <%= f.submit %>
   </div>
 <% end %>

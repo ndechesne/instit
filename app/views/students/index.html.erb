@@ -10,6 +10,7 @@
     <th>Firstname</th>
     <th>Birth</th>
     <th>Gender</th>
+    <th>Classes</th>
     <th></th>
   </tr>
   </thead>
@@ -21,6 +22,9 @@
     <td><%= student.firstName %></td>
     <td><%= student.birth %></td>
     <td><%= student.gender %></td>
+    <td><%= student.classrooms.collect {|c| c.name } %></td>
+
+
     <td>
       <div class="btn-group">
         <%= link_to 'Show', student, :class => "btn btn-info btn-mini" %></button>

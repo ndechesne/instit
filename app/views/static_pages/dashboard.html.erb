@@ -26,6 +26,30 @@
 </table>
 
 
+<h2>Mes eleves</h2>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Date de naissance</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%= student.lastName %></td>
+    <td><%= student.firstName %></td>
+    <td><%= student.birth %></td>
+    <td><%= link_to 'Show', student %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) %></td>
+    <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
 
 
 

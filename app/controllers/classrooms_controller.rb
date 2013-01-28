@@ -34,13 +34,13 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/1/edit
   def edit
-    @classroom = Classroom.find(params[:id])
+    @classroom = Classroom.where(:user_id => current_user).find(params[:id])
   end
 
   # POST /classrooms
   # POST /classrooms.json
   def create
-    @classroom = Classroom.new(params[:classroom])
+    @classroom = current_user.classrooms.new(params[:classroom])
 
     respond_to do |format|
       if @classroom.save
@@ -56,7 +56,7 @@ class ClassroomsController < ApplicationController
   # PUT /classrooms/1
   # PUT /classrooms/1.json
   def update
-    @classroom = Classroom.find(params[:id])
+    @classroom = Classroom.where(:user_id => current_user).find(params[:id])
 
     respond_to do |format|
       if @classroom.update_attributes(params[:classroom])
@@ -72,7 +72,7 @@ class ClassroomsController < ApplicationController
   # DELETE /classrooms/1
   # DELETE /classrooms/1.json
   def destroy
-    @classroom = Classroom.find(params[:id])
+    @classroom = Classroom.where(:user_id => current_user).find(params[:id])
     @classroom.destroy
 
     respond_to do |format|

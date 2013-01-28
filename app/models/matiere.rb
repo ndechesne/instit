@@ -15,8 +15,8 @@ class Matiere < ActiveRecord::Base
   attr_accessible :description, :name
 
   has_many :controles, :dependent => :destroy
+  has_and_belongs_to_many :classrooms
   belongs_to :user
-  belongs_to :classroom
 
   validates :name, :uniqueness => true
   validates :user_id, :presence => true

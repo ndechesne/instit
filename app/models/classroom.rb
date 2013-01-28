@@ -12,12 +12,14 @@
 
 class Classroom < ActiveRecord::Base
   attr_accessible :name, :user_id, :state
-  belongs_to :user
+
   validates :user_id, :presence => true
 
+  belongs_to :user
   has_many :controles, :dependent => :destroy
   has_and_belongs_to_many :students
-
+  has_and_belongs_to_many :matieres
+  
   def active?
     state == 'active'
   end
